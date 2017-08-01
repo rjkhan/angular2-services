@@ -1,3 +1,12 @@
-<p>
-  weathers works!
-</p>
+
+<form (ngSubmit)="fetchData(myform.value)" #myform = "ngForm" >
+  Search weather vy Country Name: <input type="text" name="query"[(ngModel)]="text" >
+</form>
+<br>
+<br>
+<div *ngIf="weatherDetails != undefined ">
+ <p><strong> City :</strong> {{weatherDetails.name}}</p>
+ <p><strong> Humidity :</strong> {{weatherDetails.humidity}}</p>
+ <p><strong>Pressure:</strong> {{weatherDetails.pressure}}</p>
+ <p><strong>Temperature:</strong> {{weatherDetails.temp}}</p>
+<div>
